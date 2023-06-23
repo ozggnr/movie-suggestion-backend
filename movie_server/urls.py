@@ -19,11 +19,15 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
+from rest_framework.routers import DefaultRouter
 from movie_server.user_auth.views import MyTokenObtainPairView
+from movie_server.movies.views import get_popular_movies
+# router = DefaultRouter()
+# router.register(r'movie', get_movies, basename='movie')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    path('api/auth/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('movie', get_popular_movies)
+    # path('api/auth/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
