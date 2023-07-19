@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = getenv('DJANGO_SECRET_KEY')
-
+TMDB_TOKEN = getenv('TMDB_TOKEN')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -24,10 +24,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movie_server.user_auth',
+    'movie_server.movies',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
-    'corsheaders'
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
