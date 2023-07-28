@@ -5,7 +5,7 @@ from .views.ai_movies import AIMoviesViewSet
 
 router = DefaultRouter()
 # router.register(r'', movies.get_popular_movies, name='movie-list')
-router.register(r'ai', AIMoviesViewSet, basename='ai-movies')
+router.register(r'ai/suggestion', AIMoviesViewSet, basename='ai-movies')
 
 
 urlpatterns = [
